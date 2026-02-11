@@ -222,7 +222,9 @@ for proc_loop in range(num_processes):
 import pathlib
 import pickle
 import os
+
 dirname = os.path.join(pathlib.Path().resolve(), 'results' )
+os.makedirs(dirname, exist_ok=True)
 eval_paper_authorsfilename = os.path.join(dirname, logname + ".pkl")
 # if not os.path.isfile(eval_paper_authorsfilename):
 with open(eval_paper_authorsfilename,'wb') as file:
