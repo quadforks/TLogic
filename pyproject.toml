@@ -1,18 +1,24 @@
-[tool.poetry]
+[project]
 name = "logical-tkgs"
 version = "0.1.0"
 description = ""
-authors = ["Yushan Liu <yushan.liu@siemens.com>"]
+authors = [{ name = "Yushan Liu", email = "yushan.liu@siemens.com" }]
+requires-python = ">=3.9,<3.11"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+]
+dependencies = [
+    "numpy>=1.21.4,<2",
+    "joblib>=1.2.0,<2",
+    "pandas>=1.3.4,<2",
+    "notebook>=6.4.12,<7",
+]
 
-[tool.poetry.dependencies]
-python = ">=3.9,<3.11"
-numpy = "^1.21.4"
-joblib = "^1.2.0"
-pandas = "^1.3.4"
-notebook = "^6.4.12"
-
-[tool.poetry.dev-dependencies]
+[dependency-groups]
+dev = []
 
 [build-system]
-requires = ["poetry-core>=1.0.0"]
-build-backend = "poetry.core.masonry.api"
+requires = ["uv_build>=0.10.2,<0.11.0"]
+build-backend = "uv_build"
